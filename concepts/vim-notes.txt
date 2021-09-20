@@ -1,0 +1,59 @@
+Vim notes
+
+h → cursor moves left
+
+l → cursor moves right
+
+j → cursor moves down
+
+k → cursor moves up
+
+dd → deletes the line
+
+gg → takes to the top
+
+G → takes to the down
+
+u → undo
+
+ctrl + r → redo
+
+yy → copy the line
+
+p → paste below
+
+P → paste above
+
+dd also copies the line to clipboard
+
+V → shifts you to visual mode
+
+o → insert line below and changes to insert mode
+
+t → takes to the characeter (one before)
+
+f → takes to the character
+
+cw → deletes the word and enters the insert mode. ( c stands for change and w for word)
+
+C → deletes the line from the current position of cursor and enter the insert mode.
+
+D → deletes the line starting from the current position of the cursor.
+
+ct}
+
+dt/
+
+(*) → takes to next occurrence of the word
+
+; → takes to the next instance of the character on the line (after t{character)
+
+x → deletes the character on which cursor is present
+
+A → goes to the end of the line on which cursor is present and changes to insert mode.
+
+I → goes to the end of the line on which cursor is present and changes to insert mode.
+
+~ → changes the case of the character (lowercase to uppercase or vice-versa)
+
+r → replaces the character in command mode itself
