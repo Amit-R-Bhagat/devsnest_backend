@@ -1,0 +1,11 @@
+CREATE TABLE person(
+person_id INT NOT NULL,
+name VARCHAR(255),
+order_id INT NOT NULL
+)
+
+SELECT * FROM person;
+
+SELECT name FROM person;
+
+SELECT * FROM person WHERE person_id = 2;
