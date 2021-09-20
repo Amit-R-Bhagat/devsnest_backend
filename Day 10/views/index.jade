@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  each file in files
+    a(href=`/download?query=${folder}\\${file}`)
+      img(src=file height='200px' width='300px')
