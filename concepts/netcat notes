@@ -1,0 +1,14 @@
+nd[options][target_ip][remote_port]
+
+-l : Tells the netcat to be in listen mode
+-u : shifts netcat from tcp to upd mode
+-P : used to set port to listen on 
+-e : used for setting payload ops
+-L : makes a persistent listener
+-wN : used to define timeout value
+-v : shows output in verbose mode
+
+
+
+/
+/albums

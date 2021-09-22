@@ -12,26 +12,26 @@ const pool = new Pool({
 
 const registerInitialChecks = require("./middlewares/registerInitialChecks");
 const register = require("./controllers/register");
-// const { RedisStore, redisClient, session } = require("./databases/redis");
+const { RedisStore, redisClient, session } = require("./databases/redis");
 
 require("./databases/mongo");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.use(
-//   session({
-//     store: new RedisStore({ client: redisClient }),
-//     secret: "secret$%123",
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: {
-//       secure: false,
-//       httpOnly: false,
-//       maxAge: 1000 * 60 * 10,
-//     },
-//   })
-// );
+app.use(
+  session({
+    store: new RedisStore({ client: redisClient }),
+    secret: "secret$%123",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: false,
+      httpOnly: false,
+      maxAge: 1000 * 60 * 10,
+    },
+  })
+);
 
 // app.get("/", (req, res) => {
 //   pool.query('SELECT * FROM "Users";', (err, result) => {
@@ -42,15 +42,16 @@ app.use(express.urlencoded({ extended: true }));
 //   });
 // });
 
-// app.get("/", (req, res) => {
-//   const sess = req.session;
-//   sess.username = "amit";
-//   res.json("user saved");
-// });
+app.get("/", (req, res) => {
+  const sess = req.session;
+  sess.username = "amit";
+  res.json("user saved");
+});
 
-// app.get("/test", (req, res) => {
-//   res.json(req.session.username);
-// });
+app.get("/test", (req, res) => {
+  console.log(req.session.username);
+  res.json(req.session.username);
+});
 
 app.post("/register", register);
 
